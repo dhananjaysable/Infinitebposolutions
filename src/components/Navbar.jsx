@@ -20,17 +20,17 @@ const Navbar = ({ scrolled }) => {
         scrolled ? "bg-white shadow-md py-2" : "bg-white shadow-md py-2"
       }`}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="container flex items-center justify-between px-4 mx-auto">
         <div className="text-xl font-bold text-[#0B3B7F]">
           <a href="#" onClick={() => handleLinkClick("home")}>
             INFINITY BPO SOLUTIONS, INC.
           </a>
         </div>
 
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden space-x-8 md:flex">
           <div className="flex flex-col items-center">
             <a
-              href="#home"
+              href="#"
               className={`text-[#0B3B7F] hover:text-primary transition-colors ${
                 activeLink === "home" ? "font-semibold" : "text-gray-500"
               }`}
@@ -123,7 +123,7 @@ const Navbar = ({ scrolled }) => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg absolute top-full left-0 w-full py-4 px-4">
+        <div className="absolute left-0 w-full px-4 py-4 bg-white shadow-lg md:hidden top-full">
           <div className="flex flex-col space-y-4">
             <a
               href="#home"
