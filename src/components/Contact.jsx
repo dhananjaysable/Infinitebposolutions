@@ -37,9 +37,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData);
-    // Reset form after submission
     setFormData({
       name: "",
       email: "",
@@ -54,24 +52,23 @@ const Contact = () => {
         others: false,
       },
     });
-    // Show success message
     alert("Message sent successfully!");
   };
 
   return (
-    <section id="contact-form" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 bg-white">
+      <div className="container px-4 mx-auto">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-primary text-center mb-12">
+          <h2 className="mb-12 text-4xl font-bold text-center text-primary">
             Let us help you with your business!
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid gap-8 md:grid-cols-2">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-secondary font-medium mb-2"
+                  className="block mb-2 font-medium text-secondary"
                 >
                   Name <span className="text-red-500">*</span>
                 </label>
@@ -90,7 +87,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-secondary font-medium mb-2"
+                  className="block mb-2 font-medium text-secondary"
                 >
                   Email <span className="text-red-500">*</span>
                 </label>
@@ -110,7 +107,7 @@ const Contact = () => {
             <div>
               <label
                 htmlFor="message"
-                className="block text-secondary font-medium mb-2"
+                className="block mb-2 font-medium text-secondary"
               >
                 How can we help?
               </label>
@@ -126,10 +123,10 @@ const Contact = () => {
             </div>
 
             <div>
-              <label className="block text-secondary font-medium mb-3">
+              <label className="block mb-3 font-medium text-secondary">
                 Services <span className="text-red-500">*</span>
               </label>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
                 <div className="flex items-center">
                   <input
                     type="checkbox"
@@ -137,7 +134,7 @@ const Contact = () => {
                     name="sales"
                     checked={formData.services.sales}
                     onChange={handleCheckboxChange}
-                    className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                    className="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                   />
                   <label htmlFor="sales" className="ml-2 text-gray-700">
                     Sales
@@ -151,7 +148,7 @@ const Contact = () => {
                     name="technicalSupport"
                     checked={formData.services.technicalSupport}
                     onChange={handleCheckboxChange}
-                    className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                    className="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                   />
                   <label
                     htmlFor="technicalSupport"
@@ -168,7 +165,7 @@ const Contact = () => {
                     name="leadGeneration"
                     checked={formData.services.leadGeneration}
                     onChange={handleCheckboxChange}
-                    className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                    className="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                   />
                   <label
                     htmlFor="leadGeneration"
@@ -185,7 +182,7 @@ const Contact = () => {
                     name="backOfficeSupport"
                     checked={formData.services.backOfficeSupport}
                     onChange={handleCheckboxChange}
-                    className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                    className="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                   />
                   <label
                     htmlFor="backOfficeSupport"
@@ -202,7 +199,7 @@ const Contact = () => {
                     name="customerServiceSupport"
                     checked={formData.services.customerServiceSupport}
                     onChange={handleCheckboxChange}
-                    className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                    className="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                   />
                   <label
                     htmlFor="customerServiceSupport"
@@ -219,7 +216,7 @@ const Contact = () => {
                     name="surveyServices"
                     checked={formData.services.surveyServices}
                     onChange={handleCheckboxChange}
-                    className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                    className="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                   />
                   <label
                     htmlFor="surveyServices"
@@ -236,7 +233,7 @@ const Contact = () => {
                     name="others"
                     checked={formData.services.others}
                     onChange={handleCheckboxChange}
-                    className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                    className="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                   />
                   <label htmlFor="others" className="ml-2 text-gray-700">
                     Others
@@ -248,7 +245,7 @@ const Contact = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300"
+                className="px-8 py-3 font-bold text-white transition duration-300 bg-blue-600 rounded-md cursor-pointer hover:bg-blue-700"
               >
                 SEND MESSAGE
               </button>
