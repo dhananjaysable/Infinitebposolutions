@@ -15,7 +15,6 @@ const Footer = () => {
     >
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {/* Company Info & Socials */}
           <div>
             <h3 className="mb-4 text-2xl font-bold text-gray-600 sm:text-3xl">
               Infinity BPO Solutions Inc.
@@ -49,7 +48,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="mb-4 text-xl font-bold text-gray-600 sm:text-2xl">
               Quick Links
@@ -90,7 +88,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h3 className="mb-4 text-xl font-bold text-gray-600 sm:text-2xl">
               Contact Us
@@ -99,7 +96,7 @@ const Footer = () => {
               <p className="flex items-center">
                 <FaMapMarkerAlt className="mr-2" />
                 <span className="text-base text-gray-500 transition-colors hover:text-primary sm:text-lg">
-                  ICEICO TECHNOLOGIES PVT. LTD
+                  Mandaluyong City, Philippines
                 </span>
               </p>
               <p className="flex items-center">
