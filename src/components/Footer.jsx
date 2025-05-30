@@ -91,8 +91,7 @@ const Footer = () => {
               <p className="flex items-center">
                 <FaMapMarkerAlt className="mr-2" />
                 <span className="text-gray-500 transition-colors hover:text-primary">
-                  ICEICO TECHNOLOGIES PVT. LTD. Plot No. 91, Ganesh Nagar,
-                  Azamshah Layout, Nandanwan, Nagpur, Maharashtra 440009
+                  ICEICO TECHNOLOGIES PVT. LTD
                 </span>
               </p>
               <p className="flex items-center">
