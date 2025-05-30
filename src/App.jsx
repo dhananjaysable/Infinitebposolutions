@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-// Components
 import Navbar from "./components/Navbar";
 import VideoHeader from "./components/VideoHeader";
 import AboutUs from "./components/AboutUs";
