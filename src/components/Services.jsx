@@ -12,9 +12,11 @@ const executiveImage =
 
 const ServiceCard = ({ title, description }) => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-lg transition-transform duration-300 hover:transform hover:scale-105 h-full">
-      <h3 className="text-2xl font-bold text-primary mb-4">{title}</h3>
-      <p className="text-gray-700">{description}</p>
+    <div className="h-full p-6 transition-transform duration-300 bg-white rounded-lg shadow-lg sm:p-8 hover:scale-105">
+      <h3 className="mb-3 text-xl font-bold sm:text-2xl text-primary sm:mb-4">
+        {title}
+      </h3>
+      <p className="text-base text-gray-700 sm:text-lg">{description}</p>
     </div>
   );
 };
@@ -67,6 +69,20 @@ const Services = () => {
         }`}
       />
     ),
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   };
 
   const next = () => {
@@ -78,72 +94,85 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-accent">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-secondary mb-4">
+    <section id="services" className="py-12 sm:py-16 md:py-20 bg-accent">
+      <div className="container px-4 mx-auto">
+        <div className="mb-10 text-center sm:mb-14 md:mb-16">
+          <h2 className="mb-4 text-2xl font-bold sm:text-3xl md:text-4xl text-secondary">
             Services Offered
           </h2>
         </div>
 
         <div className="relative">
-          <Slider ref={sliderRef} {...settings} className="mb-12">
-            <div className="relative h-[500px] overflow-hidden rounded-lg">
-              <img
-                src={cityImage}
-                alt="City Skyline"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gray-800 bg-opacity-60 flex items-center justify-center p-8">
-                <div className="text-white text-center max-w-2xl">
-                  <h3 className="text-3xl font-bold mb-4">
-                    We're - visionaries and strategic thinkers.
-                  </h3>
-                  <p className="text-xl">Over ten years in the BPO industry</p>
+          <Slider ref={sliderRef} {...settings} className="mb-10 sm:mb-12">
+            <div>
+              <div className="relative h-64 sm:h-96 md:h-[500px] overflow-hidden rounded-lg">
+                <img
+                  src={cityImage}
+                  alt="City Skyline"
+                  className="object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 flex items-center justify-center p-4 bg-gray-800 bg-opacity-60 sm:p-8">
+                  <div className="max-w-xl text-center text-white sm:max-w-2xl">
+                    <h3 className="mb-2 text-xl font-bold sm:text-2xl md:text-3xl sm:mb-4">
+                      We're - visionaries and strategic thinkers.
+                    </h3>
+                    <p className="text-base sm:text-xl">
+                      Over ten years in the BPO industry
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {services.slice(0, 3).map((service, index) => (
-                  <ServiceCard
-                    key={index}
-                    title={service.title}
-                    description={service.description}
-                  />
-                ))}
+            <div>
+              <div className="p-4 bg-white rounded-lg shadow-lg sm:p-8">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
+                  {services.slice(0, 3).map((service, index) => (
+                    <ServiceCard
+                      key={index}
+                      title={service.title}
+                      description={service.description}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div className="relative h-[500px] overflow-hidden rounded-lg">
-              <img
-                src={executiveImage}
-                alt="Executive Portrait"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute bottom-0 right-0 bg-primary text-white p-6 max-w-xs">
-                <h3 className="text-2xl font-bold mb-2">Michelle Melecio</h3>
-                <p className="text-sm">CEO & COO</p>
+            <div>
+              <div className="relative h-64 sm:h-96 md:h-[500px] overflow-hidden rounded-lg">
+                <img
+                  src={executiveImage}
+                  alt="Executive Portrait"
+                  className="object-cover w-full h-full"
+                />
+                <div className="absolute bottom-0 right-0 max-w-xs p-4 text-white bg-primary sm:p-6">
+                  <h3 className="mb-1 text-lg font-bold sm:text-2xl sm:mb-2">
+                    Michelle Melecio
+                  </h3>
+                  <p className="text-xs sm:text-sm">CEO & COO</p>
+                </div>
               </div>
             </div>
           </Slider>
 
+          {/* Show arrows only on md+ screens */}
           <button
             onClick={previous}
-            className="absolute top-1/2 left-4 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 text-primary p-2 rounded-full shadow-lg z-10 transition-all duration-300"
+            className="absolute z-10 hidden p-2 transition-all duration-300 -translate-y-1/2 bg-white rounded-full shadow-lg md:flex top-1/2 left-4 bg-opacity-80 hover:bg-opacity-100 text-primary"
+            aria-label="Previous"
           >
             <FaChevronLeft size={24} />
           </button>
           <button
             onClick={next}
-            className="absolute top-1/2 right-4 -translate-y-1/2 bg-white bg-opacity-80 hover:bg-opacity-100 text-primary p-2 rounded-full shadow-lg z-10 transition-all duration-300"
+            className="absolute z-10 hidden p-2 transition-all duration-300 -translate-y-1/2 bg-white rounded-full shadow-lg md:flex top-1/2 right-4 bg-opacity-80 hover:bg-opacity-100 text-primary"
+            aria-label="Next"
           >
             <FaChevronRight size={24} />
           </button>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-6 mt-10 sm:mt-16 md:grid-cols-2 sm:gap-8">
           {services.slice(3, 5).map((service, index) => (
             <ServiceCard
               key={index}

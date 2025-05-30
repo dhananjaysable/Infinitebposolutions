@@ -56,15 +56,15 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-12 bg-white sm:py-16 md:py-20">
       <div className="container px-4 mx-auto">
         <div className="max-w-4xl mx-auto">
-          <h2 className="mb-12 text-4xl font-bold text-center text-primary">
+          <h2 className="mb-8 text-2xl font-bold text-center sm:mb-10 md:mb-12 sm:text-3xl md:text-4xl text-primary">
             Let us help you with your business!
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-8">
-            <div className="grid gap-8 md:grid-cols-2">
+          <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+            <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2">
               <div>
                 <label
                   htmlFor="name"
@@ -80,7 +80,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Full name"
                   required
-                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full p-3 text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary sm:text-lg"
                 />
               </div>
 
@@ -99,7 +99,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Email address"
                   required
-                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full p-3 text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary sm:text-lg"
                 />
               </div>
             </div>
@@ -118,7 +118,7 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="Tell us about the project"
                 rows="6"
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full p-3 text-base border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary sm:text-lg"
               ></textarea>
             </div>
 
@@ -126,7 +126,7 @@ const Contact = () => {
               <label className="block mb-3 font-medium text-secondary">
                 Services <span className="text-red-500">*</span>
               </label>
-              <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
                 <div className="flex items-center">
                   <input
                     type="checkbox"
@@ -136,7 +136,10 @@ const Contact = () => {
                     onChange={handleCheckboxChange}
                     className="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                   />
-                  <label htmlFor="sales" className="ml-2 text-gray-700">
+                  <label
+                    htmlFor="sales"
+                    className="ml-2 text-base text-gray-700 sm:text-lg"
+                  >
                     Sales
                   </label>
                 </div>
@@ -152,7 +155,7 @@ const Contact = () => {
                   />
                   <label
                     htmlFor="technicalSupport"
-                    className="ml-2 text-gray-700"
+                    className="ml-2 text-base text-gray-700 sm:text-lg"
                   >
                     Technical Support
                   </label>
@@ -169,7 +172,7 @@ const Contact = () => {
                   />
                   <label
                     htmlFor="leadGeneration"
-                    className="ml-2 text-gray-700"
+                    className="ml-2 text-base text-gray-700 sm:text-lg"
                   >
                     Lead Generation
                   </label>
@@ -186,7 +189,7 @@ const Contact = () => {
                   />
                   <label
                     htmlFor="backOfficeSupport"
-                    className="ml-2 text-gray-700"
+                    className="ml-2 text-base text-gray-700 sm:text-lg"
                   >
                     Back Office Support
                   </label>
@@ -203,7 +206,7 @@ const Contact = () => {
                   />
                   <label
                     htmlFor="customerServiceSupport"
-                    className="ml-2 text-gray-700"
+                    className="ml-2 text-base text-gray-700 sm:text-lg"
                   >
                     Customer Service Support
                   </label>
@@ -220,7 +223,7 @@ const Contact = () => {
                   />
                   <label
                     htmlFor="surveyServices"
-                    className="ml-2 text-gray-700"
+                    className="ml-2 text-base text-gray-700 sm:text-lg"
                   >
                     Survey Services
                   </label>
@@ -235,7 +238,10 @@ const Contact = () => {
                     onChange={handleCheckboxChange}
                     className="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary"
                   />
-                  <label htmlFor="others" className="ml-2 text-gray-700">
+                  <label
+                    htmlFor="others"
+                    className="ml-2 text-base text-gray-700 sm:text-lg"
+                  >
                     Others
                   </label>
                 </div>
@@ -245,7 +251,7 @@ const Contact = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="px-8 py-3 font-bold text-white transition duration-300 bg-blue-600 rounded-md cursor-pointer hover:bg-blue-700"
+                className="px-8 py-3 text-base font-bold text-white transition duration-300 bg-blue-600 rounded-md cursor-pointer hover:bg-blue-700 sm:text-lg"
               >
                 SEND MESSAGE
               </button>

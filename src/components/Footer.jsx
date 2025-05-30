@@ -9,14 +9,18 @@ import {
 
 const Footer = () => {
   return (
-    <footer id="contact" className="py-12 mt-auto text-gray-500 bg-secondary">
+    <footer
+      id="contact"
+      className="py-10 mt-auto text-gray-500 sm:py-12 bg-secondary"
+    >
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {/* Company Info & Socials */}
           <div>
-            <h3 className="mb-4 text-2xl font-bold text-gray-600">
+            <h3 className="mb-4 text-2xl font-bold text-gray-600 sm:text-3xl">
               Infinity BPO Solutions Inc.
             </h3>
-            <p className="mb-4">
+            <p className="mb-4 text-base sm:text-lg">
               A premier Business Process Outsourcing company dedicated to
               providing high-quality services to businesses worldwide.
             </p>
@@ -45,15 +49,16 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h3 className="mb-4 text-xl font-bold text-gray-600">
+            <h3 className="mb-4 text-xl font-bold text-gray-600 sm:text-2xl">
               Quick Links
             </h3>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#"
-                  className="text-gray-500 transition-colors hover:text-primary"
+                  className="text-base text-gray-500 transition-colors hover:text-primary sm:text-lg"
                 >
                   Home
                 </a>
@@ -61,7 +66,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#about"
-                  className="text-gray-500 transition-colors hover:text-primary"
+                  className="text-base text-gray-500 transition-colors hover:text-primary sm:text-lg"
                 >
                   About Us
                 </a>
@@ -69,7 +74,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#services"
-                  className="text-gray-500 transition-colors hover:text-primary"
+                  className="text-base text-gray-500 transition-colors hover:text-primary sm:text-lg"
                 >
                   Services
                 </a>
@@ -77,7 +82,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#contact"
-                  className="text-gray-500 transition-colors hover:text-primary"
+                  className="text-base text-gray-500 transition-colors hover:text-primary sm:text-lg"
                 >
                   Contact
                 </a>
@@ -85,12 +90,15 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div>
-            <h3 className="mb-4 text-xl font-bold text-gray-600">Contact Us</h3>
+            <h3 className="mb-4 text-xl font-bold text-gray-600 sm:text-2xl">
+              Contact Us
+            </h3>
             <div className="space-y-3">
               <p className="flex items-center">
                 <FaMapMarkerAlt className="mr-2" />
-                <span className="text-gray-500 transition-colors hover:text-primary">
+                <span className="text-base text-gray-500 transition-colors hover:text-primary sm:text-lg">
                   ICEICO TECHNOLOGIES PVT. LTD
                 </span>
               </p>
@@ -98,7 +106,7 @@ const Footer = () => {
                 <FaPhone className="mr-2" />
                 <a
                   href="tel:+11234567890"
-                  className="text-gray-500 transition-colors hover:text-primary"
+                  className="text-base text-gray-500 transition-colors hover:text-primary sm:text-lg"
                 >
                   +1 (123) 456-7890
                 </a>
@@ -107,7 +115,7 @@ const Footer = () => {
                 <FaEnvelope className="mr-2" />
                 <a
                   href="mailto:info@infinitybposolutions.com"
-                  className="text-gray-500 transition-colors hover:text-primary"
+                  className="text-base text-gray-500 transition-colors hover:text-primary sm:text-lg"
                 >
                   info@infinitybposolutions.com
                 </a>
@@ -117,7 +125,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 mt-8 text-center border-t border-gray-600">
-          <p className="text-gray-500">
+          <p className="text-sm text-gray-500 sm:text-base">
             &copy; {new Date().getFullYear()} Infinity BPO Solutions Inc. All
             rights reserved.
           </p>

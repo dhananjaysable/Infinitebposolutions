@@ -20,166 +20,85 @@ const Navbar = ({ scrolled }) => {
         scrolled ? "bg-white shadow-md py-2" : "bg-white shadow-md py-2"
       }`}
     >
-      <div className="container flex items-center justify-between px-4 mx-auto">
-        <div className="text-xl font-bold text-[#0B3B7F]">
+      <div className="container flex items-center justify-between h-16 px-4 mx-auto">
+        <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#0B3B7F]">
           <a href="#" onClick={() => handleLinkClick("home")}>
             INFINITY BPO SOLUTIONS, INC.
           </a>
         </div>
 
-        <div className="hidden space-x-8 md:flex">
-          <div className="flex flex-col items-center">
-            <a
-              href="#"
-              className={`text-[#0B3B7F] hover:text-primary transition-colors ${
-                activeLink === "home" ? "font-semibold" : "text-gray-500"
-              }`}
-              onClick={() => handleLinkClick("home")}
-            >
-              Home
-            </a>
-            {activeLink === "home" && (
-              <div className="h-2 w-2 bg-[#0B3B7F] rounded-full mt-1"></div>
-            )}
-          </div>
-
-          <div className="flex flex-col items-center">
-            <a
-              href="#about"
-              className={`hover:text-primary transition-colors ${
-                activeLink === "about"
-                  ? "font-semibold text-[#0B3B7F]"
-                  : "text-gray-500"
-              }`}
-              onClick={() => handleLinkClick("about")}
-            >
-              About Us
-            </a>
-            {activeLink === "about" && (
-              <div className="h-2 w-2 bg-[#0B3B7F] rounded-full mt-1"></div>
-            )}
-          </div>
-
-          <div className="flex flex-col items-center">
-            <a
-              href="#services"
-              className={`hover:text-primary transition-colors ${
-                activeLink === "services"
-                  ? "font-semibold text-[#0B3B7F]"
-                  : "text-gray-500"
-              }`}
-              onClick={() => handleLinkClick("services")}
-            >
-              Services
-            </a>
-            {activeLink === "services" && (
-              <div className="h-2 w-2 bg-[#0B3B7F] rounded-full mt-1"></div>
-            )}
-          </div>
-
-          <div className="flex flex-col items-center">
-            <a
-              href="#mission-vision"
-              className={`hover:text-primary transition-colors ${
-                activeLink === "mission-vision"
-                  ? "font-semibold text-[#0B3B7F]"
-                  : "text-gray-500"
-              }`}
-              onClick={() => handleLinkClick("mission-vision")}
-            >
-              Mission & Vision
-            </a>
-            {activeLink === "mission-vision" && (
-              <div className="h-2 w-2 bg-[#0B3B7F] rounded-full mt-1"></div>
-            )}
-          </div>
-
-          <div className="flex flex-col items-center">
-            <a
-              href="#contact"
-              className={`hover:text-primary transition-colors ${
-                activeLink === "contact"
-                  ? "font-semibold text-[#0B3B7F]"
-                  : "text-gray-500"
-              }`}
-              onClick={() => handleLinkClick("contact")}
-            >
-              Contact Us
-            </a>
-            {activeLink === "contact" && (
-              <div className="h-2 w-2 bg-[#0B3B7F] rounded-full mt-1"></div>
-            )}
-          </div>
+        {/* Desktop Menu */}
+        <div className="hidden space-x-4 md:flex lg:space-x-8">
+          {[
+            { label: "Home", href: "#", key: "home" },
+            { label: "About Us", href: "#about", key: "about" },
+            { label: "Services", href: "#services", key: "services" },
+            {
+              label: "Mission & Vision",
+              href: "#mission-vision",
+              key: "mission-vision",
+            },
+            { label: "Contact Us", href: "#contact", key: "contact" },
+          ].map((item) => (
+            <div key={item.key} className="flex flex-col items-center">
+              <a
+                href={item.href}
+                className={`transition-colors text-base sm:text-lg hover:text-primary ${
+                  activeLink === item.key
+                    ? "font-semibold text-[#0B3B7F]"
+                    : "text-gray-500"
+                }`}
+                onClick={() => handleLinkClick(item.key)}
+              >
+                {item.label}
+              </a>
+              {activeLink === item.key && (
+                <div className="h-2 w-2 bg-[#0B3B7F] rounded-full mt-1"></div>
+              )}
+            </div>
+          ))}
         </div>
 
+        {/* Mobile Hamburger */}
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
             className="text-[#0B3B7F] focus:outline-none"
+            aria-label="Toggle menu"
           >
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute left-0 w-full px-4 py-4 bg-white shadow-lg md:hidden top-full">
           <div className="flex flex-col space-y-4">
-            <a
-              href="#home"
-              className={`${
-                activeLink === "home"
-                  ? "text-[#0B3B7F] font-semibold"
-                  : "text-gray-500"
-              }`}
-              onClick={() => handleLinkClick("home")}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className={`${
-                activeLink === "about"
-                  ? "text-[#0B3B7F] font-semibold"
-                  : "text-gray-500"
-              }`}
-              onClick={() => handleLinkClick("about")}
-            >
-              About Us
-            </a>
-            <a
-              href="#services"
-              className={`${
-                activeLink === "services"
-                  ? "text-[#0B3B7F] font-semibold"
-                  : "text-gray-500"
-              }`}
-              onClick={() => handleLinkClick("services")}
-            >
-              Services
-            </a>
-            <a
-              href="#mission-vision"
-              className={`${
-                activeLink === "mission-vision"
-                  ? "text-[#0B3B7F] font-semibold"
-                  : "text-gray-500"
-              }`}
-              onClick={() => handleLinkClick("mission-vision")}
-            >
-              Mission & Vision
-            </a>
-            <a
-              href="#contact"
-              className={`${
-                activeLink === "contact"
-                  ? "text-[#0B3B7F] font-semibold"
-                  : "text-gray-500"
-              }`}
-              onClick={() => handleLinkClick("contact")}
-            >
-              Contact Us
-            </a>
+            {[
+              { label: "Home", href: "#", key: "home" },
+              { label: "About Us", href: "#about", key: "about" },
+              { label: "Services", href: "#services", key: "services" },
+              {
+                label: "Mission & Vision",
+                href: "#mission-vision",
+                key: "mission-vision",
+              },
+              { label: "Contact Us", href: "#contact", key: "contact" },
+            ].map((item) => (
+              <a
+                key={item.key}
+                href={item.href}
+                className={`transition-colors text-base sm:text-lg ${
+                  activeLink === item.key
+                    ? "text-[#0B3B7F] font-semibold"
+                    : "text-gray-500"
+                }`}
+                onClick={() => handleLinkClick(item.key)}
+              >
+                {item.label}
+              </a>
+            ))}
           </div>
         </div>
       )}
