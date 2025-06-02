@@ -27,7 +27,6 @@ const Navbar = ({ scrolled }) => {
           </a>
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden space-x-4 md:flex lg:space-x-8">
           {[
             { label: "Home", href: "#", key: "home" },
@@ -59,7 +58,6 @@ const Navbar = ({ scrolled }) => {
           ))}
         </div>
 
-        {/* Mobile Hamburger */}
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
@@ -71,7 +69,6 @@ const Navbar = ({ scrolled }) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute left-0 w-full px-4 py-4 bg-white shadow-lg md:hidden top-full">
           <div className="flex flex-col space-y-4">
