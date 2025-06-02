@@ -4,7 +4,6 @@ import Logo from "../assets/images/test.png";
 const VideoHeader = () => {
   return (
     <div className="relative w-full h-[70vh] sm:h-[80vh] md:h-screen overflow-hidden">
-      {/* Video Background */}
       <div className="absolute top-0 left-0 w-full h-full bg-black">
         <video
           className="absolute object-cover w-full h-full opacity-70"
@@ -18,7 +17,6 @@ const VideoHeader = () => {
         </video>
       </div>
 
-      {/* Overlay Content */}
       <div className="relative z-10 flex items-center justify-center h-full px-4 text-center">
         <div className="w-full max-w-4xl mx-auto">
           <div className="flex justify-center mb-6">
