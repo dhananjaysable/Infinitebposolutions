@@ -155,7 +155,6 @@ const Services = () => {
             </div>
           </Slider>
 
-          {/* Show arrows only on md+ screens */}
           <button
             onClick={previous}
             className="absolute z-10 hidden p-2 transition-all duration-300 -translate-y-1/2 bg-white rounded-full shadow-lg md:flex top-1/2 left-4 bg-opacity-80 hover:bg-opacity-100 text-primary"
